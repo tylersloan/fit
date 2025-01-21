@@ -13,8 +13,7 @@ export function meta({}: Route.MetaArgs) {
 
 const openai = new OpenAI({
   dangerouslyAllowBrowser: true,
-  apiKey:
-    "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",
+  apiKey: "",
 })
 
 export async function clientLoader({ params }: Route.ClientLoaderArgs) {
