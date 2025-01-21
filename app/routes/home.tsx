@@ -1,8 +1,5 @@
 import type { Route } from "./+types/home"
 import { Welcome } from "../welcome/welcome"
-// import { generateText } from "ai"
-// import { openai } from "@ai-sdk/openai"
-import OpenAI from "openai"
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -11,24 +8,6 @@ export function meta({}: Route.MetaArgs) {
   ]
 }
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-})
-
-export async function clientLoader({ params }: Route.ClientLoaderArgs) {
-  // const completion = await openai.chat.completions.create({
-  //   model: "gpt-4o-mini",
-  //   store: true,
-  //   messages: [{ role: "user", content: "write a haiku about ai" }],
-  // })
-
-  // return completion
-
-  return {
-    message: "hello",
-  }
-}
-
-export default function Home({ loaderData }: Route.ComponentProps) {
-  return <Welcome loaderData={loaderData} />
+export default function Home() {
+  return <Welcome />
 }
