@@ -12,8 +12,7 @@ export function meta({}: Route.MetaArgs) {
 }
 
 const openai = new OpenAI({
-  dangerouslyAllowBrowser: true,
-  apiKey: "",
+  apiKey: process.env.OPENAI_API_KEY,
 })
 
 export async function clientLoader({ params }: Route.ClientLoaderArgs) {
